@@ -416,7 +416,7 @@
     },
     {
       "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+      "text": "வணக்கம்! நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்களுக்கு அழைப்பது. உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் என்ன பற்றி பேச வேண்டும் என்று தெரியுமா?"
     },
     {
       "speaker": "customer",
@@ -424,7 +424,7 @@
     },
     {
       "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+      "text": "வணக்கம்! நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்களுக்கு அழைப்பது. உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் ஒரு குறிப்பிட்ட தொகை கடன் பணம் பற்றி பேச வேண்டும். உங"
     },
     {
       "speaker": "customer",
@@ -432,7 +432,7 @@
     },
     {
       "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+      "text": "வணக்கம்! நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்களுக்கு அழைப்பது. உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் ஒரு குறிப்பிட்ட தொகை கடன் பணம் பற்றி பேச வேண்டும். உங"
     },
     {
       "speaker": "customer",
@@ -440,7 +440,7 @@
     },
     {
       "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+      "text": "நன்றி! உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் இப்போது என்ன நிலைமை என்று தெரியுமா? உங்கள் கடன் தொகை எவ்வளவு என்று தெரியுமா?"
     },
     {
       "speaker": "customer",
@@ -448,47 +448,7 @@
     },
     {
       "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "ஆகாகத்"
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "இத்தன இருவத்தரா ஆகஸ்ட் ஆகஸ்ட் டுவெண்டி ஃபைவ்மே ருவாயிரலாம் கிடையாது சார்"
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "ஆகா கம்பெனிலது ஆகா"
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "சார் அவர் வந்து என்ன சொல்லா இருந்தா ஆகஸ்ட் டுடி சிக்ஸ்ல வந்து எல்லாமே பேமெண்ட்"
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "கட்டி முடிச்சாச்சி அப்படிங்கற மாதிரி சொல்றார்ச்சது பாக்குறது இது வரேன்"
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+      "text": "நன்றி! உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் இப்போது என்ன நிலைமை என்று தெரியுமா? உங்கள் கடன் தொகை எவ்வளவு என்று தெரியுமா? நான் உங்களுக்கு உதவ விரும்புகிறேன்."
     }
   ]
 }

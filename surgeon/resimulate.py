@@ -37,7 +37,7 @@ print("Imports OK")
 
 # ── Get Groq client ───────────────────────────────────────────────────────────
 def get_client():
-    for i in range(1, 10):
+    for i in range(1, 16):
         key = os.getenv(f"GROQ_KEY_{i}")
         if key:
             return Groq(api_key=key)
@@ -117,12 +117,25 @@ def simulate_with_fixed_prompt(system_prompt, customer_messages, max_turns=10):
             )
             reply = response.choices[0].message.content.strip()
         except Exception as e:
-            reply = f"[API ERROR: {str(e)[:80]}]"
-            print(f"  API error: {str(e)[:80]}")
+            err = str(e)
+            if "429" in err:
+                print(f"  Rate limit hit — waiting 30s before retry...")
+                time.sleep(30)
+                try:
+                    response = client.chat.completions.create(
+                        model="llama-3.3-70b-versatile",
+                        messages=[{"role": "system", "content": system_prompt}, *history],
+                        temperature=0.3, max_tokens=250)
+                    reply = response.choices[0].message.content.strip()
+                except:
+                    reply = "[Rate limit — skipped]"
+            else:
+                reply = f"[API ERROR: {str(e)[:80]}]"
+                print(f"  API error: {str(e)[:80]}")
 
         history.append({"role": "assistant", "content": reply})
         conversation.append({"speaker": "agent", "text": reply})
-        time.sleep(2)  # stay within rate limits
+        time.sleep(5)  # stay within rate limits
 
     return conversation
 
@@ -151,7 +164,7 @@ def run_one(call_id, fixed_prompt_path, flaw_being_fixed):
 
     # Run simulation with fixed prompt
     print(f"\nSimulating with fixed prompt (using first {min(10, len(customer_msgs))} customer turns)...")
-    simulated = simulate_with_fixed_prompt(system_prompt, customer_msgs, max_turns=10)
+    simulated = simulate_with_fixed_prompt(system_prompt, customer_msgs, max_turns=5)
     simulated_agent = [t["text"] for t in simulated if t["speaker"] == "agent"]
 
     # Print before/after
@@ -195,7 +208,7 @@ if __name__ == "__main__":
     print(f"Found: {FIXED}")
 
     # Check API key
-    found_key = any(os.getenv(f"GROQ_KEY_{i}") for i in range(1, 10))
+    found_key = any(os.getenv(f"GROQ_KEY_{i}") for i in range(1, 16))
     if not found_key:
         print("ERROR: No GROQ_KEY_1 found in .env file")
         sys.exit(1)
@@ -215,7 +228,7 @@ if __name__ == "__main__":
     for call_id, flaw in calls:
         result = run_one(call_id, FIXED, flaw)
         all_results.append(result)
-        time.sleep(3)
+        time.sleep(10)
 
     # Save combined summary
     summary_path = os.path.join("surgeon", "resimulation_summary.json")

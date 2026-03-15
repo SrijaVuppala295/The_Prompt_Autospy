@@ -25,7 +25,7 @@ load_dotenv()
 
 def load_keys():
     pool = []
-    for i in range(1, 10):
+    for i in range(1, 31):
         k = os.getenv(f"GROQ_KEY_{i}")
         if k:
             pool.append({"provider":"groq","key":k,"label":f"Groq-{i}",

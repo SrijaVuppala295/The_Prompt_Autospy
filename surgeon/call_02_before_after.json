@@ -284,7 +284,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I am Alex from DemoCompany. We work with DemoLender for education loans. I am calling about your DemoLender loan. You have a pending amount. Can you please tell me a little bit about your current situation with the loan?"
+      "text": "I'm Alex from DemoCompany. We work with DemoLender for education loans. I'm calling about your DemoLender loan. You have a pending amount. Can you please confirm your account details so I can assist you further?"
     },
     {
       "speaker": "customer",
@@ -292,7 +292,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I understand. You have 12500 rupees pending on your DemoLender loan."
+      "text": "Let me pull up your exact figures."
     },
     {
       "speaker": "customer",
@@ -300,7 +300,7 @@
     },
     {
       "speaker": "agent",
-      "text": "मैं डेमोकंपनी से अलेक्स हूँ। हम डेमोलेंडर के साथ शिक्षा ऋण के लिए काम करते हैं। मैं आपके डेमोलेंडर ऋण के बारे में बात करने के लिए कॉल कर रहा हूँ। आपके खाते में 12500 रुपये बकाया हैं। क्या आप अपने ऋण की वर्तमान स्थिति के बारे में बता सकते हैं?"
+      "text": "I understand. To better assist you, I'll need to confirm some details about your DemoLender loan account. Can you please tell me a little bit about your current situation with the loan?"
     },
     {
       "speaker": "customer",
@@ -308,7 +308,7 @@
     },
     {
       "speaker": "agent",
-      "text": "मैं समझता हूँ। तो आपके पास 12500 रुपये का बकाया है। क्या आप इसे चुकाने के लिए कोई योजना बना सकते हैं?"
+      "text": "I understand. Let me see... (pause) I've pulled up your account information. Can you please confirm your name and the loan account number associated with your DemoLender loan?"
     },
     {
       "speaker": "customer",
@@ -316,47 +316,7 @@
     },
     {
       "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "Sir कौन सा payment?"
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "मैंने कोई loan नहीं लिया था."
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "हां बोलिए."
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "Sir मेरे husband ने loan करवाया था."
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
-    },
-    {
-      "speaker": "customer",
-      "text": "ठीक है? लेकिन उन्होंने"
-    },
-    {
-      "speaker": "agent",
-      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+      "text": "I've got your account details here. Regarding your DemoLender loan, I see that there's an outstanding amount. I'd like to discuss a possible payment plan with you. Would you be open to exploring some options?"
     }
   ]
 }
