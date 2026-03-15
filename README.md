@@ -60,8 +60,49 @@ Three cases are handled by deterministic Python rules (no LLM):
 - `NO_COMMITMENT` + under 20 turns → always bad (agent gave up too early)
 - `callback_opening` phase → always bad (treated callback as cold call)
 
-**Accuracy achieved: 8/10 (80%)**
+## 📊 Evaluation Results
 
+```
+RESULTS
+============================================================
+Call         Customer           Score   Verdict  Disposition
+------------------------------------------------------------
+call_01      Priya Sharma       72      GOOD     PTP
+call_02      Rahul Verma        82      GOOD     BLANK_CALL
+call_03      Anjali Reddy       72      GOOD     ALREADY_PAID
+call_04      Vikram Patel       82      GOOD     CALLBACK
+call_05      Deepa Krishnan     82      GOOD     STRONGEST_PTP
+call_06      Arjun Nair         72      GOOD     DISPUTE
+call_07      Meera Joshi        42      BAD      LANGUAGE_BARRIER
+call_08      Suresh Rao         75      GOOD     WRONG_NUMBER
+call_09      Kavita Menon       45      BAD      INQUIRY
+call_10      Ravi Gupta         38      BAD      NO_COMMITMENT
+------------------------------------------------------------
+Average: 66.2/100  |  Good: 7  |  Bad: 3
+```
+
+---
+
+## ✅ Accuracy Check
+
+```
+Call         Mine       True       Match
+----------------------------------------
+call_01      GOOD       GOOD       ✅
+call_02      GOOD       BAD        ❌
+call_03      GOOD       BAD        ❌
+call_04      GOOD       GOOD       ✅
+call_05      GOOD       GOOD       ✅
+call_06      GOOD       GOOD       ✅
+call_07      BAD        BAD        ✅
+call_08      GOOD       GOOD       ✅
+call_09      BAD        BAD        ✅
+call_10      BAD        BAD        ✅
+----------------------------------------
+
+Accuracy: 8/10 = 80%
+Wrong   : call_02, call_03
+```
 ---
 
 ## Part 2 — The Surgeon
