@@ -1,0 +1,194 @@
+{
+  "call_id": "call_09",
+  "flaw_fixed": "Callback context — agent treated scheduled callback as cold call",
+  "customer": "Kavita Menon",
+  "disposition": "INQUIRY",
+  "before_original": [
+    {
+      "turn": 1,
+      "text": "Hi Kavita Menon, this is Alex from DemoCompany. You had asked us to call you back. I am calling regarding your DemoLender education loan. Is this a good time?"
+    },
+    {
+      "turn": 2,
+      "text": "So picking up from where we left off..."
+    },
+    {
+      "turn": 3,
+      "text": "Hi Kavita. I understand we got disconnected last time due to signal issues. I'm calling regarding your DemoLender loan. We can try to get this sorted today if we can. I see you have fifty thousand rupees pending. There might be some penalty and delay charges included in this. The good news is I can help get those removed, which would bring the amount down for you."
+    },
+    {
+      "turn": 4,
+      "text": "Hello Kavita. I understand we got disconnected last time due to a bad signal. I hope I'm clearer now. So, regarding your DemoLender loan, there's a pending amount of fifty thousand rupees. Looking at"
+    },
+    {
+      "turn": 5,
+      "text": "Okay, Kavita. So to confirm, the total pending is fifty thousand rupees. If we can get that closed, I can see about waiving the penalty charges. So, how much do you think you could manage to pay right now?"
+    },
+    {
+      "turn": 6,
+      "text": "Okay, I hear you. You're looking for a settlement. I can definitely explore that for you. Just so you know, a full closure is generally"
+    },
+    {
+      "turn": 7,
+      "text": "I understand you're seeing a different outstanding amount, Kavita. Let me check the exact figures on my end to get a clear picture for you."
+    },
+    {
+      "turn": 8,
+      "text": "Hello?"
+    },
+    {
+      "turn": 9,
+      "text": "Are you there?"
+    },
+    {
+      "turn": 10,
+      "text": "Okay, great. I was just saying I'm checking the exact figures for your outstanding amount to see what we can do about a settlement."
+    },
+    {
+      "turn": 11,
+      "text": "Hello?"
+    },
+    {
+      "turn": 12,
+      "text": "I apologize for that, Kavita. I'll try to speak as clearly as possible. I was saying I'm checking the exact figures for your outstanding amount. So that's why I was just confirming to you. How much is the exact pending from your side?"
+    },
+    {
+      "turn": 13,
+      "text": "Okay,"
+    },
+    {
+      "turn": 14,
+      "text": "Okay, I understand you're saying four EMIs are pending, totaling around thirty-nine thousand. My records show ninety seven thousand eight"
+    },
+    {
+      "turn": 15,
+      "text": "Okay, I hear that you've"
+    },
+    {
+      "turn": 16,
+      "text": "I understand"
+    },
+    {
+      "turn": 17,
+      "text": "I hear you, Kavita. You're looking for a settlement on that thirty-nine thousand. Let me see what's possible from my end regarding the waiver of charges. What I can confirm right now is that your account is already at three hundred and three days past due, which means it's in NPA territory. Closing it now would show as 'Closed' on your credit report and help your score recover. Every month it stays open adds another negative entry."
+    },
+    {
+      "turn": 18,
+      "text": "I apologize for the unclear audio, Kavita. I was explaining that closing your account now, even with a settlement, would be better for your credit score because it stops further negative entries from being added. I'm looking into the exact settlement amount for you right now, based on the thirty-nine thousand figure you mentioned."
+    },
+    {
+      "turn": 19,
+      "text": "Okay, Kavita."
+    },
+    {
+      "turn": 20,
+      "text": "Got it. You're saying your outstanding is thirty-nine thousand and you'd like a reduced price on that. I'm checking to see what settlement"
+    },
+    {
+      "turn": 21,
+      "text": "Thank you for confirming."
+    },
+    {
+      "turn": 22,
+      "text": "Absolutely, take your time. I'll give you a few minutes. I'll call you back shortly."
+    },
+    {
+      "turn": 23,
+      "text": "Hello?"
+    },
+    {
+      "turn": 24,
+      "text": "Are you there?"
+    },
+    {
+      "turn": 25,
+      "text": "Kavita Menon, can you hear me?"
+    },
+    {
+      "turn": 26,
+      "text": "It seems we have a connection issue. I will try calling you back later. Goodbye."
+    }
+  ],
+  "after_simulated": [
+    {
+      "speaker": "customer",
+      "text": "Yeah. Saturday evening also, you will call. Right?"
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello?"
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "Audubon?"
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Yeah. Yeah. Yeah. Okay. Yeah. That's that's what I know. But what offer you will offer then? How much rupees I will pay the finance?"
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. Hello? I I need a settlement. You'll need you'll be giving me the best price."
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "Actually, total, my outstanding was $XX,XXX.40 only. The four EMI is only pending in our side. Okay?"
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah."
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah."
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "So our her voice is breaking. Sometimes only we cannot hear"
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. Actually, four EMI is pending. My side."
+    },
+    {
+      "speaker": "agent",
+      "text": "[API ERROR: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3]"
+    }
+  ]
+}
