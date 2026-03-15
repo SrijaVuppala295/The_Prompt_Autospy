@@ -60,7 +60,7 @@ Three cases are handled by deterministic Python rules (no LLM):
 - `NO_COMMITMENT` + under 20 turns → always bad (agent gave up too early)
 - `callback_opening` phase → always bad (treated callback as cold call)
 
-**Accuracy achieved: 7/10 (70%)**
+**Accuracy achieved: 8/10 (80%)**
 
 ---
 
