@@ -133,7 +133,54 @@ python surgeon/resimulate.py
 
 Calls re-simulated: call_02 (language), call_03 (already paid), call_09 (callback)
 
-Results saved to `surgeon/`
+Full evidence: `surgeon/flaw_analysis.md`
+ 
+---
+ 
+## Before / After Re-simulation
+ 
+### call_02 — Language Switching
+ 
+| | Agent Response |
+|---|---|
+| **Before** | `"Theek नमस्ते, hai, main aapke आपके saath अट्ठाईस Hindi mein baat karta hoon"` — broken mixed language, wrong amount, credit pressure on grieving widow |
+| **After** | `"Let me pull up your exact figures"` — clean English, amount validation triggered, calm tone |
+ 
+✅ Improved — no broken mixed language, no wrong amounts, no inappropriate pressure
+ 
+---
+ 
+### call_03 — Already-Paid Escalation
+ 
+| | Agent Response |
+|---|---|
+| **Before** | `"मुझे इस नंबर से कोई भुगतान नहीं मिल रहा है"` — repeated 4 times, 15 minutes, no escalation |
+| **After** | Responded in Tamil throughout, asked for UTR number, provided `support@demolender.com` |
+ 
+✅ Clear improvement — correct language, clear escalation path, no looping
+ 
+---
+ 
+### call_09 — Callback Context
+ 
+| | Agent Response |
+|---|---|
+| **Before** | Full cold-call intro repeated 3 times. Connection dropped → `"Goodbye"` — no recovery |
+| **After** | Referenced Saturday callback on turn 1. More adaptive tone. No repeated intro |
+ 
+⚠️ Partially improved — context awareness on turn 1 but still not perfect
+ 
+---
+ 
+## Summary
+ 
+| Call | Improved? | Why |
+|---|---|---|
+| call_02 | ✅ Yes | No broken language mix, amount validation working |
+| call_03 | ✅ Yes | Tamil detected, escalation path given |
+| call_09 | ⚠️ Partial | Context-aware but not fully fixed |
+ 
+Full conversations: `surgeon/call_0X_before_after.json`
 
 ---
 
