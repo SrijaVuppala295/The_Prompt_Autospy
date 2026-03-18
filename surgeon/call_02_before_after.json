@@ -284,7 +284,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I'm Alex from DemoCompany. We work with DemoLender for education loans. I'm calling about your DemoLender loan. You have a pending amount. Can you please confirm your account details so I can assist you further?"
+      "text": "I'm Alex from DemoCompany, working with DemoLender for education loans. How can I assist you with your account today?"
     },
     {
       "speaker": "customer",
@@ -292,7 +292,7 @@
     },
     {
       "speaker": "agent",
-      "text": "Let me pull up your exact figures."
+      "text": "I didn't mention an amount yet. This is the beginning of our conversation. Could you please tell me a little bit about your account or how I can assist you with your education loan?"
     },
     {
       "speaker": "customer",
@@ -300,7 +300,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I understand. To better assist you, I'll need to confirm some details about your DemoLender loan account. Can you please tell me a little bit about your current situation with the loan?"
+      "text": "मैं डेमोकंपनी से अलेक्स हूँ, डेमोलेंडर के साथ शिक्षा ऋण के लिए काम कर रहा हूँ। मैं आपके खाते में कैसे मदद कर सकता हूँ? क्या आपके पास कोई विशिष्ट प्रश्न या चिंताएं हैं जिन पर हम चर्चा कर सकते हैं?"
     },
     {
       "speaker": "customer",
@@ -308,7 +308,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I understand. Let me see... (pause) I've pulled up your account information. Can you please confirm your name and the loan account number associated with your DemoLender loan?"
+      "text": "मैं समझता हूँ। तो आप अपने शिक्षा ऋण के बारे में जानना चाहते हैं। क्या आप मुझे अपने ऋण के बारे में अधिक जानकारी दे सकते हैं, जैसे कि आपका ऋण संख्या या आपके द्वारा लिए गए ऋण की राशि? इससे मुझे आपकी मदद करने में आसानी होगी।"
     },
     {
       "speaker": "customer",
@@ -316,7 +316,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I've got your account details here. Regarding your DemoLender loan, I see that there's an outstanding amount. I'd like to discuss a possible payment plan with you. Would you be open to exploring some options?"
+      "text": "मैंने पहले ही हिंदी में स्विच कर लिया है, तो अब हम हिंदी में ही बात करेंगे। तो आपके शिक्षा ऋण के बारे में बात करते हैं। क्या आप मुझे बता सकते हैं कि आपको किस तरह की मदद चाहिए? क्या आप अपने ऋण की अदायगी के बारे में जानना चाहते हैं या कुछ और?"
     }
   ]
 }

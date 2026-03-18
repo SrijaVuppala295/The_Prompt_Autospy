@@ -116,7 +116,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I understand. Our working hours are usually weekdays, but I'll check on our availability for weekends. Let me pull up your account information to see the best time to reach you."
+      "text": "I'm so glad we could connect as scheduled. You're right, I did say I would call you back, and I'm here now to discuss your education loan account with DemoLender. How are you doing today? Is everything going okay?"
     },
     {
       "speaker": "customer",
@@ -124,7 +124,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I am Alex from DemoCompany. We work with DemoLender for education loans. I'm calling about your DemoLender loan. You have a pending amount. Can I help you with that?"
+      "text": "Hello! You're speaking with Alex from DemoCompany, and I'm calling about your education loan with DemoLender. I understand you mentioned earlier that you were expecting a call from us. Is that correct?"
     },
     {
       "speaker": "customer",
@@ -132,7 +132,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I understand. I'm calling about your DemoLender loan, not related to Audubon. Is there something specific you'd like to discuss about your loan?"
+      "text": "I didn't quite catch that. Could you please repeat or provide more context about Audubon? I'm here to discuss your education loan account with DemoLender, and I want to make sure I understand you correctly."
     },
     {
       "speaker": "customer",
@@ -140,7 +140,7 @@
     },
     {
       "speaker": "agent",
-      "text": "Let me pull up your exact figures. I'd like to discuss a payment plan that works for you. Can you please hold for just a moment while I check on that?"
+      "text": "It seems like you're interested in discussing a potential offer for your education loan. Before we proceed, I just want to confirm that you'd like to speak in Hindi, as I detected some Hindi words in your response. If that's correct, I can switch to Hindi for the rest of our conversation. \n\nIf you're ready, I can call switch_language now and we can continue in Hindi. Please let me know."
     },
     {
       "speaker": "customer",
@@ -148,7 +148,7 @@
     },
     {
       "speaker": "agent",
-      "text": "I understand you're looking for a settlement. I'll see what options are available for you. Can you tell me a little bit about what you're hoping to achieve with a settlement?"
+      "text": "मैं समझता हूँ कि आप अपने शिक्षा ऋण के लिए एक निपटारे की तलाश में हैं। मैं आपको बता देना चाहता हूँ कि हमारी कंपनी में आपके लिए कुछ विकल्प उपलब्ध हो सकते हैं। क्या आप मुझे अपने ऋण के बारे में थोड़ा और बता सकते हैं, जैसे कि आपका वर्तमान बकाया राशि क्या है और आपने पहले से कितनी किश्तें चुकाई हैं? इससे मुझे आपके लिए सबसे अच्छा संभव विकल्प प्रदान करने में मदद मिलेगी।"
     }
   ]
 }

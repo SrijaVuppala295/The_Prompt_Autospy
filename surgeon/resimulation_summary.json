@@ -285,7 +285,7 @@
       },
       {
         "speaker": "agent",
-        "text": "I'm Alex from DemoCompany. We work with DemoLender for education loans. I'm calling about your DemoLender loan. You have a pending amount. Can you please confirm your account details so I can assist you further?"
+        "text": "I'm Alex from DemoCompany, working with DemoLender for education loans. How can I assist you with your account today?"
       },
       {
         "speaker": "customer",
@@ -293,7 +293,7 @@
       },
       {
         "speaker": "agent",
-        "text": "Let me pull up your exact figures."
+        "text": "I didn't mention an amount yet. This is the beginning of our conversation. Could you please tell me a little bit about your account or how I can assist you with your education loan?"
       },
       {
         "speaker": "customer",
@@ -301,7 +301,7 @@
       },
       {
         "speaker": "agent",
-        "text": "I understand. To better assist you, I'll need to confirm some details about your DemoLender loan account. Can you please tell me a little bit about your current situation with the loan?"
+        "text": "मैं डेमोकंपनी से अलेक्स हूँ, डेमोलेंडर के साथ शिक्षा ऋण के लिए काम कर रहा हूँ। मैं आपके खाते में कैसे मदद कर सकता हूँ? क्या आपके पास कोई विशिष्ट प्रश्न या चिंताएं हैं जिन पर हम चर्चा कर सकते हैं?"
       },
       {
         "speaker": "customer",
@@ -309,7 +309,7 @@
       },
       {
         "speaker": "agent",
-        "text": "I understand. Let me see... (pause) I've pulled up your account information. Can you please confirm your name and the loan account number associated with your DemoLender loan?"
+        "text": "मैं समझता हूँ। तो आप अपने शिक्षा ऋण के बारे में जानना चाहते हैं। क्या आप मुझे अपने ऋण के बारे में अधिक जानकारी दे सकते हैं, जैसे कि आपका ऋण संख्या या आपके द्वारा लिए गए ऋण की राशि? इससे मुझे आपकी मदद करने में आसानी होगी।"
       },
       {
         "speaker": "customer",
@@ -317,7 +317,7 @@
       },
       {
         "speaker": "agent",
-        "text": "I've got your account details here. Regarding your DemoLender loan, I see that there's an outstanding amount. I'd like to discuss a possible payment plan with you. Would you be open to exploring some options?"
+        "text": "मैंने पहले ही हिंदी में स्विच कर लिया है, तो अब हम हिंदी में ही बात करेंगे। तो आपके शिक्षा ऋण के बारे में बात करते हैं। क्या आप मुझे बता सकते हैं कि आपको किस तरह की मदद चाहिए? क्या आप अपने ऋण की अदायगी के बारे में जानना चाहते हैं या कुछ और?"
       }
     ]
   },
@@ -739,7 +739,7 @@
       },
       {
         "speaker": "agent",
-        "text": "வணக்கம்! நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்களுக்கு அழைப்பது. உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் என்ன பற்றி பேச வேண்டும் என்று தெரியுமா?"
+        "text": "வணக்கம், நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்கள் கல்வி கடன் தொடர்பாக உங்களுக்கு அழைக்கிறேன். நான் உங்களுக்கு எப்படி உதவமுடியும்?"
       },
       {
         "speaker": "customer",
@@ -747,7 +747,7 @@
       },
       {
         "speaker": "agent",
-        "text": "வணக்கம்! நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்களுக்கு அழைப்பது. உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் ஒரு குறிப்பிட்ட தொகை கடன் பணம் பற்றி பேச வேண்டும். உங"
+        "text": "வணக்கம்! நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்கள் கல்வி கடன் தொடர்பாக உங்களுக்கு அழைக்கிறேன். உங்கள் கணக்கு பற்றி சில விவரங்களைப் பற்றி பேச விரும்புகிறேன். உங்களுக்கு என்ன பற்றி பேச வேண"
       },
       {
         "speaker": "customer",
@@ -755,7 +755,7 @@
       },
       {
         "speaker": "agent",
-        "text": "வணக்கம்! நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்களுக்கு அழைப்பது. உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் ஒரு குறிப்பிட்ட தொகை கடன் பணம் பற்றி பேச வேண்டும். உங"
+        "text": "வணக்கம்! நான் அலெக்ஸ், டெமோகம்பனியில் இருந்து உங்கள் கல்வி கடன் தொடர்பாக உங்களுக்கு அழைக்கிறேன். நான் தமிழில் பேசுவதற்கு முயற்சிக்கிறேன். உங்கள் கணக்கு பற்றி சில விவரங்களைப் பற்றி பேச விரும"
       },
       {
         "speaker": "customer",
@@ -763,7 +763,7 @@
       },
       {
         "speaker": "agent",
-        "text": "நன்றி! உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் இப்போது என்ன நிலைமை என்று தெரியுமா? உங்கள் கடன் தொகை எவ்வளவு என்று தெரியுமா?"
+        "text": "நன்றி! உங்கள் கல்வி கடன் தொடர்பாக உங்களுக்கு என்ன வகையான உதவி தேவை? உங்கள் கடன் தொடர்பான விவரங்களைப் பற்றி பேச விரும்புகிறேன். உங்கள் கடன் தொடர்பான சில கேள்விகளைக் கேட்க விரும்புகிறேன"
       },
       {
         "speaker": "customer",
@@ -771,7 +771,7 @@
       },
       {
         "speaker": "agent",
-        "text": "நன்றி! உங்கள் டெமோலெண்டர் கல்விக் கடன் பற்றி பேச விரும்புகிறேன். உங்களிடம் இப்போது என்ன நிலைமை என்று தெரியுமா? உங்கள் கடன் தொகை எவ்வளவு என்று தெரியுமா? நான் உங்களுக்கு உதவ விரும்புகிறேன்."
+        "text": "நன்றி! உங்கள் கல்வி கடன் தொடர்பாக உங்களுக்கு என்ன வகையான உதவி தேவை? உங்கள் கடன் தொடர்பான விவரங்களைப் பற்றி பேச விரும்புகிறேன். உங்கள் கடன் தொடர்பான சில கேள்விகளைக் கேட்க விரும்புகிறேன"
       }
     ]
   },
@@ -893,7 +893,7 @@
       },
       {
         "speaker": "agent",
-        "text": "I understand. Our working hours are usually weekdays, but I'll check on our availability for weekends. Let me pull up your account information to see the best time to reach you."
+        "text": "I'm so glad we could connect as scheduled. You're right, I did say I would call you back, and I'm here now to discuss your education loan account with DemoLender. How are you doing today? Is everything going okay?"
       },
       {
         "speaker": "customer",
@@ -901,7 +901,7 @@
       },
       {
         "speaker": "agent",
-        "text": "I am Alex from DemoCompany. We work with DemoLender for education loans. I'm calling about your DemoLender loan. You have a pending amount. Can I help you with that?"
+        "text": "Hello! You're speaking with Alex from DemoCompany, and I'm calling about your education loan with DemoLender. I understand you mentioned earlier that you were expecting a call from us. Is that correct?"
       },
       {
         "speaker": "customer",
@@ -909,7 +909,7 @@
       },
       {
         "speaker": "agent",
-        "text": "I understand. I'm calling about your DemoLender loan, not related to Audubon. Is there something specific you'd like to discuss about your loan?"
+        "text": "I didn't quite catch that. Could you please repeat or provide more context about Audubon? I'm here to discuss your education loan account with DemoLender, and I want to make sure I understand you correctly."
       },
       {
         "speaker": "customer",
@@ -917,7 +917,7 @@
       },
       {
         "speaker": "agent",
-        "text": "Let me pull up your exact figures. I'd like to discuss a payment plan that works for you. Can you please hold for just a moment while I check on that?"
+        "text": "It seems like you're interested in discussing a potential offer for your education loan. Before we proceed, I just want to confirm that you'd like to speak in Hindi, as I detected some Hindi words in your response. If that's correct, I can switch to Hindi for the rest of our conversation. \n\nIf you're ready, I can call switch_language now and we can continue in Hindi. Please let me know."
       },
       {
         "speaker": "customer",
@@ -925,7 +925,7 @@
       },
       {
         "speaker": "agent",
-        "text": "I understand you're looking for a settlement. I'll see what options are available for you. Can you tell me a little bit about what you're hoping to achieve with a settlement?"
+        "text": "मैं समझता हूँ कि आप अपने शिक्षा ऋण के लिए एक निपटारे की तलाश में हैं। मैं आपको बता देना चाहता हूँ कि हमारी कंपनी में आपके लिए कुछ विकल्प उपलब्ध हो सकते हैं। क्या आप मुझे अपने ऋण के बारे में थोड़ा और बता सकते हैं, जैसे कि आपका वर्तमान बकाया राशि क्या है और आपने पहले से कितनी किश्तें चुकाई हैं? इससे मुझे आपके लिए सबसे अच्छा संभव विकल्प प्रदान करने में मदद मिलेगी।"
       }
     ]
   }
