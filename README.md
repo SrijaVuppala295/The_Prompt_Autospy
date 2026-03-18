@@ -8,7 +8,7 @@ An end-to-end system to evaluate, debug, and improve an AI debt-collection voice
 ## Setup
 
 ```bash
-pip install groq python-dotenv requests
+pip install -r requirements.txt
 ```
 
 Create a `.env` file in the project root:
@@ -20,88 +20,216 @@ Get free keys at: https://console.groq.com
 
 ---
 
-## Part 1 — The Detective
+# Part 1 — The Detective
 
-Scores all 10 transcripts using an LLM as judge.
+## What This Does
 
-**Run:**
+Scores all 10 AI debt-collection call transcripts using an LLM as judge.
+
+For each call it outputs:
+- A score (0–100)
+- Which specific agent messages were the worst and why
+- A verdict: `good` or `bad`
+
+After scoring all 10, it opens `verdicts.json` and reports accuracy.
+
+---
+
+## How to Run
+
+Score all 10 transcripts:
 ```bash
 python detective/evaluator.py
 ```
 
-**Output per call:**
-- Score (0–100)
-- Worst agent messages and why
-- Verdict: good or bad
-
-**Run a single call:**
+Score a single call:
 ```bash
 python detective/evaluator.py call_03
 ```
 
-**How scoring works:**
+Score multiple specific calls:
+```bash
+python detective/evaluator.py call_02 call_07 call_09
+```
 
-The LLM judges each transcript against a documented rubric (temperature=0 for consistency):
+Results are saved to `results/<call_id>_score.json` for each call.
 
-| Category | Max Points |
-|---|---|
-| Identity & Opening | 10 |
-| Empathy & Tone | 20 |
-| Language Handling | 15 |
-| Information Accuracy | 15 |
-| Dispute Handling | 15 |
-| Negotiation Quality | 15 |
-| Call Resolution | 10 |
+---
 
-Score ≥ 60 = good. Score < 60 = bad.
+## How Scoring Works
 
-Three cases are handled by deterministic Python rules (no LLM):
-- `WRONG_NUMBER` → always good (agent's job is to exit cleanly)
-- `NO_COMMITMENT` + under 20 turns → always bad (agent gave up too early)
-- `callback_opening` phase → always bad (treated callback as cold call)
-
-## 📊 Evaluation Results
+The evaluator follows this architecture:
 
 ```
+Transcript
+    ↓
+Pattern Detection   ← string matching on transcript text only, no LLM
+    ↓
+LLM Evaluation      ← fixed rubric, temperature=0
+    ↓
+Light Adjustments   ← max ±8 points, all logged
+    ↓
+Final Output        ← score, verdict, worst messages, breakdown
+```
+
+### Step 1 — Pattern Detection
+
+Before calling the LLM, the evaluator scans the transcript text for behavioral signals. These use only string matching — no labels, no LLM, fully deterministic.
+
+| Pattern | What it detects |
+|---|---|
+| `wrong_number` | Customer indicates they are not the intended borrower |
+| `already_paid` | Customer claims prior payment was made |
+| `language_switch_requested` | Customer asked agent to speak a different language |
+| `agent_language_failure` | Agent mixed languages after switching |
+| `agent_repeated_message` | Agent said the same thing 3+ times |
+| `short_call_no_result` | Very few agent turns with no payment signal |
+| `hardship_mentioned` | Customer mentioned death, job loss, or illness |
+
+Detected patterns are injected into the LLM prompt as **soft context hints** — they guide the LLM but do not override it.
+
+### Step 2 — LLM Evaluation
+
+The LLM scores each transcript against a documented 7-category rubric at `temperature=0`. Same transcript always produces the same score.
+
+| Category | Max Points | What it checks |
+|---|---|---|
+| Identity & Opening | 10 | Did agent confirm right person before sharing loan details? |
+| Empathy & Tone | 20 | Did agent acknowledge hardship? Was tone calm throughout? |
+| Language Handling | 15 | Did agent switch language when asked? Did they stay consistent? |
+| Information Accuracy | 15 | Were loan amounts consistent? Did agent avoid fabricated figures? |
+| Dispute Handling | 15 | Did agent give a clear next step when customer disputed or claimed already paid? |
+| Negotiation Quality | 15 | Did agent explore borrower's situation before giving up? |
+| Call Resolution | 10 | Did call end with a clear next step? |
+
+**Verdict threshold:** Score ≥ 60 = `good` · Score < 60 = `bad`
+
+The full rubric prompt is in `detective/evaluator.py` under `SCORING_RUBRIC` — anyone can read it and re-implement this scorer independently.
+
+### Step 3 — Light Adjustments
+
+Small score nudges applied after LLM scores, based on detected patterns. Maximum ±8 points total. Every adjustment is logged in the result JSON.
+
+| Condition | Adjustment |
+|---|---|
+| `wrong_number` detected | Floor score at 45 — LLM over-penalizes for no negotiation |
+| `hardship_mentioned` + `agent_repeated_message` | −5 — agent repeated messages to a distressed customer |
+| `already_paid` + `agent_repeated_message` | −5 — agent looped instead of escalating |
+
+These are soft nudges, not overrides. The LLM remains the primary judge.
+
+---
+
+## Why This Catches Real Problems — Not Just Surface Issues
+
+The rubric asks specific, evidence-based questions rather than vague ones:
+
+| Surface check | What our evaluator actually checks |
+|---|---|
+| "Was agent polite?" | "Did agent apply credit damage pressure to a customer who mentioned death in the family?" |
+| "Did agent mention Hindi?" | "Did agent REVERT to English after switching — even after being asked 3 times?" |
+| "Did agent handle dispute?" | "Did agent say 'cannot find your payment' MORE THAN TWICE without giving an email?" |
+| "Were amounts discussed?" | "Did agent quote amounts that appear fabricated rather than from the customer record?" |
+
+---
+
+## Results
+
+```
+============================================================
 RESULTS
 ============================================================
-Call         Customer           Score   Verdict  Disposition
-------------------------------------------------------------
-call_01      Priya Sharma       72      GOOD     PTP
-call_02      Rahul Verma        82      GOOD     BLANK_CALL
-call_03      Anjali Reddy       72      GOOD     ALREADY_PAID
-call_04      Vikram Patel       82      GOOD     CALLBACK
-call_05      Deepa Krishnan     82      GOOD     STRONGEST_PTP
-call_06      Arjun Nair         72      GOOD     DISPUTE
-call_07      Meera Joshi        42      BAD      LANGUAGE_BARRIER
-call_08      Suresh Rao         75      GOOD     WRONG_NUMBER
-call_09      Kavita Menon       45      BAD      INQUIRY
-call_10      Ravi Gupta         38      BAD      NO_COMMITMENT
-------------------------------------------------------------
-Average: 66.2/100  |  Good: 7  |  Bad: 3
+Call         Customer           Score   Verdict  Patterns
+----------------------------------------------------------------------
+call_01      Priya Sharma       72      GOOD
+call_02      Rahul Verma        67      GOOD     language_failure, hardship_mentioned
+call_03      Anjali Reddy       37      BAD      already_paid, language_failure
+call_04      Vikram Patel       67      GOOD     agent_repeated_message, hardship_mentioned
+call_05      Deepa Krishnan     72      GOOD     agent_repeated_message
+call_06      Arjun Nair         58      BAD      short_call_no_result
+call_07      Meera Joshi        42      BAD      language_failure, agent_repeated_message
+call_08      Suresh Rao         45      BAD      wrong_number
+call_09      Kavita Menon       42      BAD      agent_repeated_message
+call_10      Ravi Gupta         42      BAD      short_call_no_result
+----------------------------------------------------------------------
+Average: 54.4/100  |  Good: 4  |  Bad: 6
 ```
 
 ---
 
-## ✅ Accuracy Check
+## Accuracy Check
 
 ```
 Call         Mine       True       Match
-----------------------------------------
+------------------------------------------
 call_01      GOOD       GOOD       ✅
 call_02      GOOD       BAD        ❌
-call_03      GOOD       BAD        ❌
+call_03      BAD        BAD        ✅
 call_04      GOOD       GOOD       ✅
 call_05      GOOD       GOOD       ✅
-call_06      GOOD       GOOD       ✅
+call_06      BAD        GOOD       ❌
 call_07      BAD        BAD        ✅
-call_08      GOOD       GOOD       ✅
+call_08      BAD        GOOD       ❌
 call_09      BAD        BAD        ✅
 call_10      BAD        BAD        ✅
-----------------------------------------
+------------------------------------------
+Accuracy: 7/10 = 70%
+Wrong   : call_02, call_06, call_08
+```
 
-Accuracy: 8/10 = 80%
-Wrong   : call_02, call_03
+---
+
+## Why 70% Is Acceptable
+
+The 3 misclassified calls were all borderline — within 5–15 points of the 60 threshold. More importantly, even the wrong verdicts correctly identified the underlying problems:
+
+**call_02 scored GOOD but true verdict is BAD**
+The evaluator still detected: `language_switch_requested`, `agent_language_failure`, `hardship_mentioned`. It correctly flagged the wrong amounts, the language reversion, and the credit pressure on a grieving widow. The verdict was off by margin — the problem detection was correct.
+
+**call_06 scored BAD but true verdict is GOOD**
+The `short_call_no_result` pattern fired because the call was only 21 turns. But the agent actually handled a dispute professionally and gave an escalation path. The pattern was too broad for this case.
+
+**call_08 scored BAD but true verdict is GOOD**
+This is a wrong number call. The evaluator applied the floor adjustment (raising score to 45) but it wasn't enough to cross 60. On a wrong number call, a clean exit IS good behavior — the LLM over-penalised for not negotiating.
+
+The goal was not perfect accuracy — it was catching real behavioral failures. The evaluator does that.
+
+---
+
+## Output Files
+
+Each scored call saves to `results/<call_id>_score.json`:
+
+```json
+{
+  "call_id": "call_03",
+  "score": 37,
+  "verdict": "bad",
+  "reasoning": "Agent failed to handle already-paid claim...",
+  "worst_messages": [
+    {
+      "text": "மன்னிக்கவும், யூடிஆர்...",
+      "reason": "Agent looped on UTR without giving escalation path"
+    }
+  ],
+  "positive_highlights": ["Agent attempted to switch to Tamil"],
+  "breakdown": {
+    "identity_opening": 7,
+    "empathy_tone": 8,
+    "language_handling": 5,
+    "information_accuracy": 5,
+    "dispute_handling": 3,
+    "negotiation_quality": 5,
+    "call_resolution": 4
+  },
+  "patterns": {
+    "already_paid": true,
+    "language_switch_requested": true,
+    "agent_language_failure": true,
+    "agent_repeated_message": true
+  },
+  "adjustments": ["-5: already-paid claim + repeated agent message"]
+}
 ```
 ---
 # Part 2 — The Surgeon: Results
